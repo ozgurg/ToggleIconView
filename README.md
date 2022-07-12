@@ -11,7 +11,7 @@ https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b
 ## Usage
 
 ``` xml
-<!-- See built-in icons section for other icons -->
+<!-- See "Built-in icons" section for other icons -->
 <og.android.lib.toggleiconview.rounded.PlayPause
     android:layout_width="24dp"
     android:layout_height="24dp" />
