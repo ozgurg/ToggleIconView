@@ -1,4 +1,4 @@
-package og.android.lib.toggleiconview.icon
+package og.android.lib.toggleiconview.rounded
 
 import android.content.Context
 import android.util.AttributeSet
