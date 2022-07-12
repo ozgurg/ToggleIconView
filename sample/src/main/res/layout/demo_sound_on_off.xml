@@ -27,7 +27,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:tint="#4caf50" />
+            android:tint="#f00" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="1dp"
@@ -52,6 +52,6 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:tint="#ff9800" />
+            android:tint="#00f" />
     </LinearLayout>
 </LinearLayout>
