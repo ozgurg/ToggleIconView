@@ -1,64 +1,62 @@
-package og.android.lib.toggleiconview;
+package og.android.lib.toggleiconview
 
-import android.content.Context;
-import android.util.AttributeSet;
+import android.content.Context
+import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
+abstract class ToggleIconView : AppCompatImageView {
+    private var checkedDrawable: AnimatedVectorDrawableCompat? = null
+    private var uncheckedDrawable: AnimatedVectorDrawableCompat? = null
+    private var isChecked = false
 
-public abstract class ToggleIconView extends AppCompatImageView {
-    private AnimatedVectorDrawableCompat mCheckedDrawable, mUncheckedDrawable;
-    private boolean mIsChecked;
+    constructor(context: Context?) : super(context!!, null)
 
-    public ToggleIconView(Context context) {
-        super(context, null);
+    constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs, 0)
+
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context!!,
+        attrs,
+        defStyleAttr
+    )
+
+    fun toggle() {
+        setChecked(!isChecked)
     }
 
-    public ToggleIconView(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
+    fun isChecked(): Boolean {
+        return isChecked
     }
 
-    public ToggleIconView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    fun setChecked(checked: Boolean) {
+        setDrawable(checked)
+        isChecked = checked
     }
 
-    public void setChecked(boolean isChecked) {
-        setDrawable(isChecked);
-        mIsChecked = isChecked;
+    private fun handleCheckedState() {
+        setImageDrawable(checkedDrawable)
+        checkedDrawable!!.start()
     }
 
-    public void toggle() {
-        setChecked(!mIsChecked);
+    private fun handleUncheckedState() {
+        setImageDrawable(uncheckedDrawable)
+        uncheckedDrawable!!.start()
     }
 
-    public boolean isChecked() {
-        return mIsChecked;
-    }
-
-    private void handleCheckedState() {
-        setImageDrawable(mCheckedDrawable);
-        mCheckedDrawable.start();
-    }
-
-    private void handleUncheckedState() {
-        setImageDrawable(mUncheckedDrawable);
-        mUncheckedDrawable.start();
-    }
-
-    private void setDrawable(boolean isChecked) {
+    private fun setDrawable(isChecked: Boolean) {
         if (isChecked) {
-            handleCheckedState();
+            handleCheckedState()
         } else {
-            handleUncheckedState();
+            handleUncheckedState()
         }
     }
 
-    protected void setCheckedDrawable(int checkedDrawableRes) {
-        mCheckedDrawable = AnimatedVectorDrawableCompat.create(getContext(), checkedDrawableRes);
-        setImageDrawable(mCheckedDrawable);
+    protected fun setCheckedDrawable(checkedDrawableRes: Int) {
+        checkedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableRes)
+        setImageDrawable(checkedDrawable)
     }
 
-    protected void setUncheckedDrawable(int uncheckedDrawableRes) {
-        mUncheckedDrawable = AnimatedVectorDrawableCompat.create(getContext(), uncheckedDrawableRes);
+    protected fun setUncheckedDrawable(uncheckedDrawableRes: Int) {
+        uncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableRes)
     }
 }
