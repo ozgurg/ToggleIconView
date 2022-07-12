@@ -56,8 +56,7 @@ anything you can with `AppCompatImageView`.
 
 ## Built-in icons
 
-All icons are has same duration and interpolator, but I capture their previews manually; timings may look different
-because of this.
+_All icons have the same duration and interpolator, but I manually capture their previews; so timings may look different._
 
 | Preview                                                                                                   | Package                                                                      |
 |-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
