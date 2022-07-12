@@ -14,7 +14,6 @@ There is lot more to do.
 - [ ] Make it more configurable (with XML)
 - [ ] Make it extensible (with docs)
 - [ ] Make it more robust (with tests)
-- [ ] There is a lot of boilerplate code requires to make it extensible (3 constructor 😡). It should be easier to use
 - [ ] Publish it somewhere
 
 ## License
