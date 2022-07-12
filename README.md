@@ -11,6 +11,7 @@ https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b
 ## Usage
 
 ``` xml
+<!-- See built-in icons section for other icons -->
 <og.android.lib.toggleiconview.rounded.PlayPause
     android:layout_width="24dp"
     android:layout_height="24dp" />
@@ -40,6 +41,11 @@ anything you can with `AppCompatImageView`.
 | Event                                                                  | Description                                        |
 |------------------------------------------------------------------------|----------------------------------------------------|
 | `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the ticked state of the icon changed |
+
+## Built-in icons
+| Preview                                                                                                   | Package                                                          |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| ![](https://user-images.githubusercontent.com/6717356/178578958-fa850653-ec68-4545-a619-18be230b8fbd.gif) | PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause` |
 
 ## TODO
 
