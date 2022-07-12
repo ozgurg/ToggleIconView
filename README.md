@@ -45,9 +45,9 @@ anything you can with `AppCompatImageView`.
 ## Built-in icons
 | Preview                                                                                                   | Package                                                                      |
 |-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| ![](https://user-images.githubusercontent.com/6717356/178583445-bbc96e52-e485-4eff-a927-074bef16db28.gif) | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
-| ![](https://user-images.githubusercontent.com/6717356/178584269-de79bb85-56c0-47f9-9741-e2b7c3958e0e.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
-| ![](https://user-images.githubusercontent.com/6717356/178585902-9cba3843-b610-4fbf-9ea9-79a519553b09.gif) | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
+| ![](https://user-images.githubusercontent.com/6717356/178586997-ec1f822d-0355-468c-8ea4-6122dd24a22b.gif) | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
+| ![](https://user-images.githubusercontent.com/6717356/178587007-a40486e7-11e3-43f1-bcb2-78a5afcedd05.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
+| ![](https://user-images.githubusercontent.com/6717356/178586969-c1270e15-76b7-4c68-83b7-c1f958aa5fb6.gif) | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
 
 ## TODO
 
