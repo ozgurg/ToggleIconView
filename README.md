@@ -107,4 +107,4 @@ Then, use it in your layout.
 
 ## License
 
-[![License](https://img.shields.io/github/license/ozgurg/toggle-icon-view)](https://github.com/ozgurg/toggle-icon-view/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/ozgurg/ToggleIconView)](https://github.com/ozgurg/ToggleIconView/blob/main/LICENSE)
