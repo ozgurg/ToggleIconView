@@ -1,3 +1,5 @@
+![JitPack](https://img.shields.io/jitpack/v/github/ozgurg/ToggleIconView)
+
 # ToggleIconView
 
 ToggleIconView is a collection library of animated two-stage toggle icons for Android.
