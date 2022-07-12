@@ -43,9 +43,10 @@ anything you can with `AppCompatImageView`.
 | `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the ticked state of the icon changed |
 
 ## Built-in icons
-| Preview                                                                                                   | Package                                                          |
-|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
-| ![](https://user-images.githubusercontent.com/6717356/178578958-fa850653-ec68-4545-a619-18be230b8fbd.gif) | PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause` |
+| Preview                                                                                                   | Package                                                                    |
+|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| ![](https://user-images.githubusercontent.com/6717356/178583445-bbc96e52-e485-4eff-a927-074bef16db28.gif) | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause` |
+| ![](https://user-images.githubusercontent.com/6717356/178584269-de79bb85-56c0-47f9-9741-e2b7c3958e0e.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff`           |
 
 ## TODO
 
