@@ -1,16 +1,18 @@
 plugins {
-    id "com.android.application"
+    id "com.android.library"
     id "org.jetbrains.kotlin.android"
 }
 
 android {
     compileSdk 32
     defaultConfig {
-        applicationId "og.android.sample.toggleiconview"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -19,11 +21,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation "androidx.core:core-ktx:1.8.0"
-    implementation "com.google.android.material:material:1.6.1"
-
-    implementation project(":toggleiconview")
+    implementation "androidx.appcompat:appcompat:1.4.2"
 }

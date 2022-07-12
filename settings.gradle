@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "ToggleIconView Sample"
 
 include ":app"
+include ":toggleiconview"
