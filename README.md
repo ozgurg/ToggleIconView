@@ -14,32 +14,32 @@ https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b
 <og.android.lib.toggleiconview.rounded.PlayPause
     android:layout_width="24dp"
     android:layout_height="24dp" />
-
-<og.android.lib.toggleiconview.rounded.SoundOnOff
-    android:layout_width="24dp"
-    android:layout_height="24dp" />
-
-<og.android.lib.toggleiconview.sharp.FlashOnOff
-    android:layout_width="24dp"
-    android:layout_height="24dp" />
 ```
-
-## Built-in icons
-
-// TODO :)
 
 ## API
 
 ToggleIconView, uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can use
 anything you can with `AppCompatImageView`.
 
-### Options
+### Attributes
 
-// TODO :)
+| Attribute     | Description                        | Type      |
+|---------------|------------------------------------|-----------|
+| `app:checked` | Sets the initial state of the icon | `boolean` |
 
 ### Methods
 
-// TODO :)
+| Method                         | Description                                                 | Return    |
+|--------------------------------|-------------------------------------------------------------|-----------|
+| `toggle()`                     | Toggles between the checked and unchecked state of the icon | `void`    |
+| `isChecked()`                  | Returns whether the icon is checked                         | `boolean` |
+| `setChecked(checked: Boolean)` | Sets the checked state of the icon                          | `void`    |
+
+### Events
+
+| Event                                                                  | Description                                        |
+|------------------------------------------------------------------------|----------------------------------------------------|
+| `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the ticked state of the icon changed |
 
 ## TODO
 
