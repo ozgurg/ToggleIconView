@@ -1,0 +1,45 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:name="path"
+                android:fillColor="@android:color/black"
+                android:pathData="M 2 4.27 L 3.27 3 L 3.27 3 L 2 4.27 Z" />
+            <clip-path
+                android:name="mask"
+                android:pathData="M 0 0 L 24 0 L 24 24 L 0 24 L 0 0 Z M 4.54 1.73 L 3.27 3 L 3.27 3 L 4.54 1.73 Z" />
+            <path
+                android:fillColor="@android:color/black"
+                android:pathData="M 3 9.984 Q 3 9.609 3.305 9.304 Q 3.61 8.999 3.985 8.999 L 6.985 8.999 L 10.313 5.718 Q 10.782 5.249 11.391 5.507 Q 12 5.765 12 6.421 L 12 17.577 Q 12 18.233 11.391 18.491 Q 10.782 18.749 10.313 18.28 L 6.985 14.999 L 3.985 14.999 Q 3.61 14.999 3.305 14.694 Q 3 14.389 3 14.014 L 3 9.983 Z M 16.5 12 Q 16.5 13.313 15.82 14.391 Q 15.14 15.469 14.015 16.032 L 14.015 7.969 Q 15.14 8.532 15.82 9.61 Q 16.5 10.688 16.5 12.001 Z M 14.016 4.453 Q 14.016 3.984 14.391 3.703 Q 14.766 3.422 15.188 3.609 Q 17.766 4.547 19.383 6.843 Q 21 9.139 21 11.999 Q 21 14.859 19.383 17.155 Q 17.766 19.451 15.188 20.389 Q 14.766 20.577 14.391 20.295 Q 14.016 20.013 14.016 19.545 L 14.016 19.357 Q 14.016 18.748 14.579 18.513 Q 16.548 17.716 17.767 15.958 Q 18.986 14.2 18.986 11.997 Q 18.986 9.794 17.767 8.036 Q 16.548 6.278 14.579 5.481 Q 14.016 5.247 14.016 4.637 L 14.016 4.449 Z" />
+        </vector>
+    </aapt:attr>
+
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="@android:integer/config_shortAnimTime"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="pathData"
+                android:valueFrom="M 2 4.27 L 3.27 3 L 3.27 3 L 2 4.27 Z"
+                android:valueTo="M 19.73 22 L 21 20.73 L 3.27 3 L 2 4.27 Z"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="mask">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="@android:integer/config_shortAnimTime"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="pathData"
+                android:valueFrom="M 0 0 L 24 0 L 24 24 L 0 24 L 0 0 Z M 4.54 1.73 L 3.27 3 L 3.27 3 L 4.54 1.73 Z"
+                android:valueTo="M 0 0 L 24 0 L 24 24 L 0 24 L 0 0 Z M 4.54 1.73 L 3.27 3 L 21 20.73 L 22.27 19.46 Z"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+</animated-vector>
