@@ -1,9 +1,11 @@
-package og.android.lib.toggleiconview
+package og.android.lib.toggleiconview.icon
 
 import android.content.Context
 import android.util.AttributeSet
+import og.android.lib.toggleiconview.R
+import og.android.lib.toggleiconview.ToggleIconView
 
-class MuteUnmuteView @JvmOverloads constructor(
+class MuteUnmute @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
