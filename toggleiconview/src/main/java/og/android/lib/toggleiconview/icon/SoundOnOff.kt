@@ -5,13 +5,13 @@ import android.util.AttributeSet
 import og.android.lib.toggleiconview.R
 import og.android.lib.toggleiconview.ToggleIconView
 
-class MuteUnmute @JvmOverloads constructor(
+class SoundOnOff @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) :
     ToggleIconView(
         context, attrs, defStyleAttr,
-        R.drawable.unmute_to_mute,
-        R.drawable.mute_to_unmute
+        R.drawable.sound_on_to_off,
+        R.drawable.sound_off_to_on
     )
