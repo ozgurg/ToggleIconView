@@ -6,10 +6,10 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 
 abstract class ToggleIconView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null,
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0,
     checkedDrawableRes: Int,
     uncheckedDrawableRes: Int,
-) : AppCompatImageView(context, attrs) {
+) : AppCompatImageView(context, attrs, defStyleAttr) {
     private var checkedDrawable: AnimatedVectorDrawableCompat? = null
     private var uncheckedDrawable: AnimatedVectorDrawableCompat? = null
     private var isChecked = false
@@ -17,6 +17,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
     init {
         setCheckedDrawable(checkedDrawableRes)
         setUncheckedDrawable(uncheckedDrawableRes)
+        handleAttributes(attrs, defStyleAttr)
     }
 
     fun toggle() {
@@ -28,7 +29,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     fun setChecked(checked: Boolean) {
-        setDrawable(checked)
+        handleCheckState(checked)
         isChecked = checked
     }
 
@@ -42,17 +43,29 @@ abstract class ToggleIconView @JvmOverloads constructor(
         uncheckedDrawable!!.start()
     }
 
-    private fun setDrawable(isChecked: Boolean) {
-        if (isChecked) {
+    private fun handleCheckState(checked: Boolean) {
+        if (checked) {
             handleCheckedState()
         } else {
             handleUncheckedState()
         }
     }
 
+    private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
+        val typedArray =
+            context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
+
+        try {
+            // app:checked
+            val checked = typedArray.getBoolean(R.styleable.ToggleIconView_checked, isChecked)
+            setChecked(checked)
+        } finally {
+            typedArray.recycle()
+        }
+    }
+
     private fun setCheckedDrawable(checkedDrawableRes: Int) {
         checkedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableRes)
-        setImageDrawable(checkedDrawable)
     }
 
     private fun setUncheckedDrawable(uncheckedDrawableRes: Int) {
