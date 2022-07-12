@@ -5,20 +5,19 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 
-abstract class ToggleIconView : AppCompatImageView {
+abstract class ToggleIconView @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null,
+    checkedDrawableRes: Int,
+    uncheckedDrawableRes: Int,
+) : AppCompatImageView(context, attrs) {
     private var checkedDrawable: AnimatedVectorDrawableCompat? = null
     private var uncheckedDrawable: AnimatedVectorDrawableCompat? = null
     private var isChecked = false
 
-    constructor(context: Context?) : super(context!!, null)
-
-    constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs, 0)
-
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context!!,
-        attrs,
-        defStyleAttr
-    )
+    init {
+        setCheckedDrawable(checkedDrawableRes)
+        setUncheckedDrawable(uncheckedDrawableRes)
+    }
 
     fun toggle() {
         setChecked(!isChecked)
@@ -51,12 +50,12 @@ abstract class ToggleIconView : AppCompatImageView {
         }
     }
 
-    protected fun setCheckedDrawable(checkedDrawableRes: Int) {
+    private fun setCheckedDrawable(checkedDrawableRes: Int) {
         checkedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableRes)
         setImageDrawable(checkedDrawable)
     }
 
-    protected fun setUncheckedDrawable(uncheckedDrawableRes: Int) {
+    private fun setUncheckedDrawable(uncheckedDrawableRes: Int) {
         uncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableRes)
     }
 }
