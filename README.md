@@ -1,8 +1,8 @@
 # ToggleIconView
 
-ToggleIconView lets you create two-stage and animated-toggle icons. It
-uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can use
-it in the same way as `AppCompatImageView`.
+ToggleIconView lets you create two-stage and animated-toggle icons.
+
+It uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can use it in the same way as `AppCompatImageView`.
 
 ## TODO
 
