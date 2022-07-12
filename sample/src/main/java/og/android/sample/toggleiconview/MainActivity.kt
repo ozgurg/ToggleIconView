@@ -40,9 +40,14 @@ class MainActivity : AppCompatActivity() {
         toggleIconViews.forEach { toggleIconView ->
             toggleIconView.setOnClickListener {
                 toggleIconView.toggle()
+            }
 
-                Toast.makeText(this, "Checked: ${toggleIconView.isChecked()}", Toast.LENGTH_SHORT)
-                    .show()
+            toggleIconView.setOnCheckedChangeListener { _: ToggleIconView, isChecked: Boolean ->
+                Toast.makeText(
+                    this,
+                    "onCheckedChanged: $isChecked",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
