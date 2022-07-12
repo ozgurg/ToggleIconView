@@ -6,7 +6,17 @@ https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b
 
 ## Installation
 
-// TODO :)
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+    implementation "com.github.ozgurg:ToggleIconView:1.0.0"
+}
+```
 
 ## Usage
 
@@ -94,12 +104,6 @@ Then, use it in your layout.
     android:layout_width="24dp"
     android:layout_height="24dp" />
 ```
-
-## TODO
-
-- [ ] Add new built-in icons (Start with https://github.com/ozgurg/ShapeShifter-Collection)
-- [ ] Make it more robust (with tests)
-- [ ] Publish it somewhere
 
 ## License
 
