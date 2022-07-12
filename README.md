@@ -9,8 +9,8 @@ It uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImag
 There is lot more to do.
 
 - [ ] Improve the docs (with screenshots, code examples, etc.)
-- [ ] Add new built-in icon (Start with https://github.com/ozgurg/ShapeShifter-Collection)
-- [ ] Write how to create their own icon
+- [ ] Add new built-in icons (Start with https://github.com/ozgurg/ShapeShifter-Collection)
+- [ ] Write how to create their own icons
 - [ ] Make it more configurable (with XML)
 - [ ] Make it extensible (with docs)
 - [ ] Make it more robust (with tests)
