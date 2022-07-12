@@ -16,7 +16,7 @@
         android:layout_height="1dp" />
 
     <include
-        layout="@layout/demo_mute_unmute"
+        layout="@layout/demo_sound_on_off"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
