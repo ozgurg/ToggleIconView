@@ -12,6 +12,6 @@ class PlayPause @JvmOverloads constructor(
 ) :
     ToggleIconView(
         context, attrs, defStyleAttr,
-        R.drawable.play_to_pause,
-        R.drawable.pause_to_play
+        R.drawable.rounded_play_to_pause,
+        R.drawable.rounded_pause_to_play
     )

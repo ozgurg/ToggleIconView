@@ -12,6 +12,6 @@ class FlashOnOff @JvmOverloads constructor(
 ) :
     ToggleIconView(
         context, attrs, defStyleAttr,
-        R.drawable.flash_on_to_off,
-        R.drawable.flash_off_to_on
+        R.drawable.sharp_flash_on_to_off,
+        R.drawable.sharp_flash_off_to_on
     )

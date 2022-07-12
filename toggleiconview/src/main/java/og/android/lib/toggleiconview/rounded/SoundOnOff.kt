@@ -12,6 +12,6 @@ class SoundOnOff @JvmOverloads constructor(
 ) :
     ToggleIconView(
         context, attrs, defStyleAttr,
-        R.drawable.sound_on_to_off,
-        R.drawable.sound_off_to_on
+        R.drawable.rounded_sound_on_to_off,
+        R.drawable.rounded_sound_off_to_on
     )
