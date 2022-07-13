@@ -42,7 +42,7 @@ afterEvaluate {
 
                 groupId = "com.github.ozgurg"
                 artifactId = "toggle-icon-view"
-                version = "1.0.4"
+                version = "2.0.0"
             }
         }
     }

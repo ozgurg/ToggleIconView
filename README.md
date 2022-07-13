@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:1.0.4"
+    implementation "com.github.ozgurg:ToggleIconView:2.0.0"
 }
 ```
 
