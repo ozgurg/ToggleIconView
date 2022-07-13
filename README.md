@@ -8,13 +8,36 @@ ToggleIconView is a collection library of animated two-stage toggle icons for An
 
 ## Installation
 
+### JitPack repository
+
 ```gradle
+// build.gradle Project
 allprojects {
     repositories {
+        ...
         maven { url "https://jitpack.io" }
     }
 }
+```
 
+If the above doesn't work, try the following:
+
+```gradle
+// settings.gradle Project
+...
+dependencyResolutionManagement {
+    ...
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+...
+```
+
+### Implementation
+```gradle
+// build.gradle App
 dependencies {
     implementation "com.github.ozgurg:ToggleIconView:2.0.0"
 }
