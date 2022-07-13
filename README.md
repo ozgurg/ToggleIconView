@@ -4,7 +4,7 @@
 
 ToggleIconView is a collection library of animated two-stage toggle icons for Android.
 
-https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b731-1f349a3e9512.mp4
+![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/sample.gif)
 
 ## Installation
 
