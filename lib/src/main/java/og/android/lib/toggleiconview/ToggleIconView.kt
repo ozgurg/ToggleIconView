@@ -13,8 +13,9 @@ abstract class ToggleIconView @JvmOverloads constructor(
     private var onCheckedChangeListener: ((toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit)? =
         null
 
-    private var checkedDrawable: AnimatedVectorDrawableCompat? = null
-    private var uncheckedDrawable: AnimatedVectorDrawableCompat? = null
+    private lateinit var checkedDrawable: AnimatedVectorDrawableCompat
+    private lateinit var uncheckedDrawable: AnimatedVectorDrawableCompat
+
     private var isChecked = false
 
     init {
@@ -40,12 +41,12 @@ abstract class ToggleIconView @JvmOverloads constructor(
 
     private fun handleCheckedState() {
         setImageDrawable(checkedDrawable)
-        checkedDrawable!!.start()
+        checkedDrawable.start()
     }
 
     private fun handleUncheckedState() {
         setImageDrawable(uncheckedDrawable)
-        uncheckedDrawable!!.start()
+        uncheckedDrawable.start()
     }
 
     private fun handleCheckState(checked: Boolean) {
@@ -70,11 +71,11 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun setCheckedDrawable(checkedDrawableRes: Int) {
-        checkedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableRes)
+        checkedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableRes)!!
     }
 
     private fun setUncheckedDrawable(uncheckedDrawableRes: Int) {
-        uncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableRes)
+        uncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableRes)!!
     }
 
     open fun setOnCheckedChangeListener(listener: (toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit) {
