@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <include
-        layout="@layout/demo_play_pause"
+        layout="@layout/demo_rounded_play_pause"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -16,7 +16,7 @@
         android:layout_height="1dp" />
 
     <include
-        layout="@layout/demo_sound_on_off"
+        layout="@layout/demo_rounded_sound_on_off"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -26,7 +26,7 @@
         android:layout_height="1dp" />
 
     <include
-        layout="@layout/demo_flash_on_off"
+        layout="@layout/demo_sharp_flash_on_off"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
