@@ -24,9 +24,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -42,7 +39,7 @@ afterEvaluate {
 
                 groupId = "com.github.ozgurg"
                 artifactId = "toggle-icon-view"
-                version = "2.0.0"
+                version = "2.1.0"
             }
         }
     }

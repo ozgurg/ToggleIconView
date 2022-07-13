@@ -4,19 +4,42 @@
 
 ToggleIconView is a collection library of animated two-stage toggle icons for Android.
 
-https://user-images.githubusercontent.com/6717356/178526403-60881b61-90af-4e23-b731-1f349a3e9512.mp4
+![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/sample.gif)
 
 ## Installation
 
+### JitPack repository
+
 ```gradle
+// build.gradle Project
 allprojects {
     repositories {
+        ...
         maven { url "https://jitpack.io" }
     }
 }
+```
 
+If the above doesn't work, try the following:
+
+```gradle
+// settings.gradle Project
+...
+dependencyResolutionManagement {
+    ...
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+...
+```
+
+### Implementation
+```gradle
+// build.gradle App
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:2.0.0"
+    implementation "com.github.ozgurg:ToggleIconView:2.1.0"
 }
 ```
 
@@ -36,9 +59,9 @@ anything you can with `AppCompatImageView`.
 
 ### Attributes
 
-| Attribute     | Description                        | Type      |
-|---------------|------------------------------------|-----------|
-| `app:checked` | Sets the initial state of the icon | `boolean` |
+| Attribute     | Description                        | Type      | Default |
+|---------------|------------------------------------|-----------|---------|
+| `app:checked` | Sets the initial state of the icon | `boolean` | `false` |
 
 ### Methods
 
@@ -58,11 +81,12 @@ anything you can with `AppCompatImageView`.
 
 _All icons have the same duration and interpolator, but I manually capture their previews; so timings may look different._
 
-| Preview                                                                                                   | Package                                                                      |
-|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| ![](https://user-images.githubusercontent.com/6717356/178586997-ec1f822d-0355-468c-8ea4-6122dd24a22b.gif) | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
-| ![](https://user-images.githubusercontent.com/6717356/178587007-a40486e7-11e3-43f1-bcb2-78a5afcedd05.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
-| ![](https://user-images.githubusercontent.com/6717356/178586969-c1270e15-76b7-4c68-83b7-c1f958aa5fb6.gif) | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
+| Preview                                                                                                    | Package                                                                      |
+|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/PlayPause.gif)  | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/PlayPause.gif)    | [Sharp] PlayPause<br />`og.android.lib.toggleiconview.sharp.PlayPause`       |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)   | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
 
 ## How I create my own icon?
 

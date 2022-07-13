@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Sound On/Off"
+        android:text="Sharp: Play/Pause"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textStyle="bold" />
@@ -22,8 +22,8 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <og.android.lib.toggleiconview.rounded.SoundOnOff
-            android:id="@+id/muteUnmute24"
+        <og.android.lib.toggleiconview.sharp.PlayPause
+            android:id="@+id/playPause24"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
@@ -34,24 +34,24 @@
             android:layout_height="64dp"
             android:layout_marginHorizontal="24dp" />
 
-        <og.android.lib.toggleiconview.rounded.SoundOnOff
-            android:id="@+id/muteUnmute48"
+        <og.android.lib.toggleiconview.sharp.PlayPause
+            android:id="@+id/playPause48"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:tint="#000"
-            app:checked="true" />
+            android:tint="#000" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="1dp"
             android:layout_height="64dp"
             android:layout_marginHorizontal="24dp" />
 
-        <og.android.lib.toggleiconview.rounded.SoundOnOff
-            android:id="@+id/muteUnmute96"
+        <og.android.lib.toggleiconview.sharp.PlayPause
+            android:id="@+id/playPause96"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:tint="#00f" />
+            android:tint="#00f"
+            app:checked="true" />
     </LinearLayout>
 </LinearLayout>
