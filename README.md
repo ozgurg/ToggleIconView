@@ -75,7 +75,7 @@ anything you can with `AppCompatImageView`.
 
 | Event                                                                  | Description                                        |
 |------------------------------------------------------------------------|----------------------------------------------------|
-| `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the ticked state of the icon changed |
+| `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
 
 ## Built-in icons
 
