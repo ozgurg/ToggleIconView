@@ -38,10 +38,6 @@ abstract class ToggleIconView @JvmOverloads constructor(
         onCheckedChangeListener?.invoke(this, checked)
     }
 
-    interface OnCheckedChangeListener {
-        fun onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)
-    }
-
     private fun handleCheckedState() {
         setImageDrawable(checkedDrawable)
         checkedDrawable!!.start()
