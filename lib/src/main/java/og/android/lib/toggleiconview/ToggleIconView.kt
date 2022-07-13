@@ -49,6 +49,12 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun handleCheckState(checked: Boolean) {
+        // We won't update the status if the status is the same as the current status
+        // This is to prevent the animation from restarting when the state is set again
+        if(checked == isChecked) {
+            return
+        }
+
         if (checked) {
             handleCheckedState()
         } else {
