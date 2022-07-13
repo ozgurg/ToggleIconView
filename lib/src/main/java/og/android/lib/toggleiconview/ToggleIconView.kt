@@ -32,6 +32,12 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     fun setChecked(checked: Boolean) {
+        // We won't update the status if the status is the same as the current status
+        // This is to prevent the animation from restarting when the state is set again
+        if (checked == isChecked) {
+            return
+        }
+
         handleCheckState(checked)
         isChecked = checked
 
@@ -49,12 +55,6 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun handleCheckState(checked: Boolean) {
-        // We won't update the status if the status is the same as the current status
-        // This is to prevent the animation from restarting when the state is set again
-        if(checked == isChecked) {
-            return
-        }
-
         if (checked) {
             handleCheckedState()
         } else {
@@ -68,7 +68,9 @@ abstract class ToggleIconView @JvmOverloads constructor(
         try {
             // app:checked
             val checked = typedArray.getBoolean(R.styleable.ToggleIconView_checked, isChecked)
-            setChecked(checked)
+
+            handleCheckState(checked)
+            isChecked = checked
         } finally {
             typedArray.recycle()
         }
