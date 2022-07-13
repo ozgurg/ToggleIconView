@@ -36,9 +36,9 @@ anything you can with `AppCompatImageView`.
 
 ### Attributes
 
-| Attribute     | Description                        | Type      |
-|---------------|------------------------------------|-----------|
-| `app:checked` | Sets the initial state of the icon | `boolean` |
+| Attribute     | Description                        | Type      | Default |
+|---------------|------------------------------------|-----------|---------|
+| `app:checked` | Sets the initial state of the icon | `boolean` | `false` |
 
 ### Methods
 
