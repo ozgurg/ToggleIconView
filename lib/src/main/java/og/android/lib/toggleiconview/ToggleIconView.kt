@@ -10,8 +10,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
     checkedDrawableRes: Int,
     uncheckedDrawableRes: Int,
 ) : AppCompatImageView(context, attrs, defStyleAttr) {
-    private var onCheckedChangeListener: ((toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit)? =
-        null
+    private var onCheckedChangeListener: ((toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit)? = null
 
     private lateinit var checkedDrawable: AnimatedVectorDrawableCompat
     private lateinit var uncheckedDrawable: AnimatedVectorDrawableCompat
@@ -58,8 +57,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
-        val typedArray =
-            context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
+        val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
 
         try {
             // app:checked
