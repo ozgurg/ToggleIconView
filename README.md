@@ -84,6 +84,7 @@ _All icons have the same duration and interpolator, but I manually capture their
 | Preview                                                                                                    | Package                                                                      |
 |------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/PlayPause.gif)  | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/PlayPause.gif)    | [Sharp] PlayPause<br />`og.android.lib.toggleiconview.sharp.PlayPause`       |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)   | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
 
