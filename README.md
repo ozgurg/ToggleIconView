@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:2.1.1"
+    implementation "com.github.ozgurg:ToggleIconView:2.2.0"
 }
 ```
 
@@ -86,6 +86,7 @@ _All icons have the same duration and interpolator, but I manually capture their
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/PlayPause.gif)  | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/PlayPause.gif)    | [Sharp] PlayPause<br />`og.android.lib.toggleiconview.sharp.PlayPause`       |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/SoundOnOff.gif) | [Sharp] SoundOnOff<br />`og.android.lib.toggleiconview.sharp.SoundOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)   | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
 
 ## How I create my own icon?
