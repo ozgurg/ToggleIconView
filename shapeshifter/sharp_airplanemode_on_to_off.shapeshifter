@@ -10,7 +10,7 @@
       "children": [
         {
           "id": "97",
-          "name": "path",
+          "name": "strike",
           "type": "path",
           "pathData": "M 2 4.27 L 3.27 3 L 3.27 3 L 2 4.27 Z",
           "fillColor": "#ff000000"
