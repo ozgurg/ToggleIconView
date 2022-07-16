@@ -29,10 +29,15 @@ class MainActivity : AppCompatActivity() {
 
                 for (i2 in 0 until depth2.childCount) {
                     val depth3 = depth2.getChildAt(i2)
-                    if (depth3 !is ToggleIconView) continue
+                    if (depth3 !is LinearLayout) continue
 
-                    // We finally found ToggleIconView! (https://youtu.be/f_EiqPp-vBM)
-                    toggleIconViews.add(depth3)
+                    for (i3 in 0 until depth3.childCount) {
+                        val depth4 = depth3.getChildAt(i3)
+                        if (depth4 !is ToggleIconView) continue
+
+                        // We finally found ToggleIconView! (https://youtu.be/f_EiqPp-vBM)
+                        toggleIconViews.add(depth4)
+                    }
                 }
             }
         }
