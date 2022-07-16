@@ -7,7 +7,7 @@
             android:viewportWidth="24"
             android:viewportHeight="24">
             <path
-                android:name="path"
+                android:name="strike"
                 android:fillColor="@android:color/black"
                 android:pathData="M 2 4.27 L 3.27 3 L 3.27 3 L 2 4.27 Z" />
             <clip-path
@@ -19,7 +19,7 @@
         </vector>
     </aapt:attr>
 
-    <target android:name="path">
+    <target android:name="strike">
         <aapt:attr name="android:animation">
             <objectAnimator
                 android:duration="@android:integer/config_shortAnimTime"

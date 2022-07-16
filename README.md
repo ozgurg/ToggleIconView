@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:2.2.0"
+    implementation "com.github.ozgurg:ToggleIconView:2.3.0"
 }
 ```
 
@@ -73,21 +73,22 @@ anything you can with `AppCompatImageView`.
 
 ### Events
 
-| Event                                                                  | Description                                        |
-|------------------------------------------------------------------------|----------------------------------------------------|
+| Event                                                                  | Description                                         |
+|------------------------------------------------------------------------|-----------------------------------------------------|
 | `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
 
 ## Built-in icons
 
 _All icons have the same duration and interpolator, but I manually capture their previews; so timings may look different._
 
-| Preview                                                                                                    | Package                                                                      |
-|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/PlayPause.gif)  | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`   |
-| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/PlayPause.gif)    | [Sharp] PlayPause<br />`og.android.lib.toggleiconview.sharp.PlayPause`       |
-| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
-| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/SoundOnOff.gif) | [Sharp] SoundOnOff<br />`og.android.lib.toggleiconview.sharp.SoundOnOff` |
-| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)   | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
+| Preview                                                                                                         | Package                                                                                |
+|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/PlayPause.gif)       | [Rounded] PlayPause<br />`og.android.lib.toggleiconview.rounded.PlayPause`             |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/PlayPause.gif)         | [Sharp] PlayPause<br />`og.android.lib.toggleiconview.sharp.PlayPause`                 |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif)      | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff`           |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/SoundOnOff.gif)        | [Sharp] SoundOnOff<br />`og.android.lib.toggleiconview.sharp.SoundOnOff`               |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)        | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`               |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif) | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff` |
 
 ## How I create my own icon?
 
