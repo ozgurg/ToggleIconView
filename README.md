@@ -88,6 +88,7 @@ _All icons have the same duration and interpolator, but I manually capture their
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/rounded/SoundOnOff.gif) | [Rounded] SoundOnOff<br />`og.android.lib.toggleiconview.rounded.SoundOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/SoundOnOff.gif) | [Sharp] SoundOnOff<br />`og.android.lib.toggleiconview.sharp.SoundOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)   | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`     |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif)   | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff`     |
 
 ## How I create my own icon?
 
