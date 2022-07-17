@@ -47,8 +47,14 @@ class MainActivity : AppCompatActivity() {
                 toggleIconView.toggle()
             }
 
+            toggleIconView.setOnLongClickListener {
+                // Just to use its setter
+                toggleIconView.isChecked = !toggleIconView.isChecked
+                false
+            }
+
             toggleIconView.setOnCheckedChangeListener { view: ToggleIconView, _: Boolean ->
-                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged] isChecked: ${toggleIconView.isChecked()}"
+                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged] isChecked: ${toggleIconView.isChecked}"
                 Log.d("TOGGLEICONVIEW_SAMPLE", value)
             }
         }

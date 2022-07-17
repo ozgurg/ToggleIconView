@@ -69,23 +69,21 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     fun toggle() {
-        setChecked(!mIsChecked)
+        isChecked = !isChecked
     }
 
-    fun isChecked(): Boolean {
-        return mIsChecked
-    }
+    var isChecked: Boolean
+        get() = mIsChecked
+        set(isChecked) {
+            // We will not update the state if the state is the same as the current state
+            // This is to prevent the animation from restarting when the state is set again
+            if (isChecked == mIsChecked) {
+                return
+            }
 
-    fun setChecked(isChecked: Boolean) {
-        // We won't update the status if the status is the same as the current status
-        // This is to prevent the animation from restarting when the state is set again
-        if (isChecked == mIsChecked) {
-            return
+            handleCheckState(isChecked)
+            mOnCheckedChangeListener?.invoke(this, isChecked)
         }
-
-        handleCheckState(isChecked)
-        mOnCheckedChangeListener?.invoke(this, isChecked)
-    }
 
     open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
         mOnCheckedChangeListener = listener
