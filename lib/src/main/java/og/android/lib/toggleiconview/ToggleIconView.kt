@@ -23,6 +23,10 @@ abstract class ToggleIconView @JvmOverloads constructor(
         handleAttributes(attrs, defStyleAttr)
     }
 
+    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
+        mOnCheckedChangeListener = listener
+    }
+
     private fun setCheckedDrawable(@DrawableRes checkedDrawableResId: Int) {
         mCheckedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableResId)!!
     }
@@ -68,6 +72,14 @@ abstract class ToggleIconView @JvmOverloads constructor(
         }
     }
 
+    private fun invokeOnCheckedChangeListener(isChecked: Boolean) {
+        mOnCheckedChangeListener?.invoke(this, isChecked)
+    }
+
+    private fun isStateSame(previous: Boolean, current: Boolean): Boolean {
+        return previous == current
+    }
+
     fun toggle() {
         isChecked = !isChecked
     }
@@ -75,17 +87,13 @@ abstract class ToggleIconView @JvmOverloads constructor(
     var isChecked: Boolean
         get() = mIsChecked
         set(isChecked) {
-            // We will not update the state if the state is the same as the current state
-            // This is to prevent the animation from restarting when the state is set again
-            if (isChecked == mIsChecked) {
+            // We do not update the state if the state is the same as the current state
+            // to prevent the animation from restarting when the state is set again
+            if (isStateSame(isChecked, mIsChecked)) {
                 return
             }
 
             handleCheckState(isChecked)
-            mOnCheckedChangeListener?.invoke(this, isChecked)
+            invokeOnCheckedChangeListener(isChecked)
         }
-
-    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
-        mOnCheckedChangeListener = listener
-    }
 }
