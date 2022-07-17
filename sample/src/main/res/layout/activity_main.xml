@@ -11,6 +11,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#09c"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Touch an icon and search for 'TOGGLEICONVIEW_SAMPLE' tag in Logcat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#fff" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

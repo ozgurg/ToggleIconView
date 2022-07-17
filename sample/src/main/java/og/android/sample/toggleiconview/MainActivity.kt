@@ -1,8 +1,8 @@
 package og.android.sample.toggleiconview
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import og.android.lib.toggleiconview.ToggleIconView
 
@@ -47,12 +47,9 @@ class MainActivity : AppCompatActivity() {
                 toggleIconView.toggle()
             }
 
-            toggleIconView.setOnCheckedChangeListener { _: ToggleIconView, isChecked: Boolean ->
-                Toast.makeText(
-                    this,
-                    "onCheckedChanged: $isChecked",
-                    Toast.LENGTH_SHORT
-                ).show()
+            toggleIconView.setOnCheckedChangeListener { view: ToggleIconView, _: Boolean ->
+                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged] isChecked: ${toggleIconView.isChecked()}"
+                Log.d("TOGGLEICONVIEW_SAMPLE", value)
             }
         }
     }
