@@ -18,8 +18,8 @@ abstract class ToggleIconView @JvmOverloads constructor(
     private var mOnCheckedChangeListener: ((view: ToggleIconView, isChecked: Boolean) -> Unit)? = null
 
     init {
-        setCheckedDrawable(checkedDrawableResId)
-        setUncheckedDrawable(uncheckedDrawableResId)
+        createAndSetCheckedDrawable(checkedDrawableResId)
+        createAndSetUncheckedDrawable(uncheckedDrawableResId)
         handleAttributes(attrs, defStyleAttr)
     }
 
@@ -27,11 +27,11 @@ abstract class ToggleIconView @JvmOverloads constructor(
         mOnCheckedChangeListener = listener
     }
 
-    private fun setCheckedDrawable(@DrawableRes checkedDrawableResId: Int) {
+    private fun createAndSetCheckedDrawable(@DrawableRes checkedDrawableResId: Int) {
         mCheckedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableResId)!!
     }
 
-    private fun setUncheckedDrawable(@DrawableRes uncheckedDrawableResId: Int) {
+    private fun createAndSetUncheckedDrawable(@DrawableRes uncheckedDrawableResId: Int) {
         mUncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableResId)!!
     }
 
