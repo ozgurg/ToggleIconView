@@ -20,7 +20,7 @@ allprojects {
 }
 ```
 
-If the above doesn't work, try the following:
+If the above doesn't work for you, try the following:
 
 ```gradle
 // settings.gradle
@@ -55,7 +55,7 @@ dependencies {
 ## API
 
 ToggleIconView, uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can do
-anything you can with `AppCompatImageView`.
+anything you can with `AppCompatImageView` like tinting and other staff.
 
 ### Attributes
 
@@ -102,19 +102,17 @@ _All icons have the same duration and interpolator, but I manually capture their
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)        | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`               |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif) | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff` |
 
-## How I create my own icon?
+## How do you create your custom icon?
 
 ### 1) Create an icon
 
-First, you need to create an `AnimatedVectorDrawable` icon.
-
-I highly recommend using [Shape Shifter](https://shapeshifter.design/).
+First, you need to create an `AnimatedVectorDrawable` icon. I highly recommend using [Shape Shifter](https://shapeshifter.design/).
 
 After creating and exporting your icon, add the icon to your project's `drawable` folder.
 
 ### 2) Implement the icon
 
-Just extend `ToggleIconView` class and set checked and unchecked icon you want to use.
+Extend `ToggleIconView` class and set checked and unchecked icon you created.
 
 ``` kotlin
 package [PACKAGE_NAME]
