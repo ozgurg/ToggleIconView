@@ -1,10 +1,8 @@
 package og.android.lib.toggleiconview
 
 import android.content.Context
-import android.os.Build
 import android.util.AttributeSet
 import androidx.annotation.DrawableRes
-import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 
@@ -71,7 +69,6 @@ abstract class ToggleIconView @JvmOverloads constructor(
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun setTooltipTextByCheckState(isChecked: Boolean) {
         tooltipText = if (isChecked) {
             mCheckedTooltipText
@@ -166,7 +163,6 @@ abstract class ToggleIconView @JvmOverloads constructor(
             }
 
             handleCheckStateChange(isChecked)
-
             invokeOnCheckedChangeListener(isChecked)
         }
 
