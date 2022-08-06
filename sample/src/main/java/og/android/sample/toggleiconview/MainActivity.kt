@@ -54,7 +54,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             toggleIconView.setOnCheckedChangeListener { view: ToggleIconView, _: Boolean ->
-                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged] isChecked: ${toggleIconView.isChecked}"
+                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged]\n" +
+                        "isChecked: ${toggleIconView.isChecked}\n" +
+                        "tooltipText: ${toggleIconView.tooltipText}\n" +
+                        "contentDescription: ${toggleIconView.contentDescription}"
                 Log.d("TOGGLEICONVIEW_SAMPLE", value)
             }
         }

@@ -59,17 +59,23 @@ anything you can with `AppCompatImageView`.
 
 ### Attributes
 
-| Attribute     | Description                        | Type      | Default |
-|---------------|------------------------------------|-----------|---------|
-| `app:checked` | Sets the initial state of the icon | `boolean` | `false` |
+| Attribute                         | Description                                                | Type      | Default |
+|-----------------------------------|------------------------------------------------------------|-----------|---------|
+| `app:checked`                     | Sets the initial state of the icon                         | `Boolean` | `false` |
+| `app:checkedContentDescription`   | Sets the initial checked content description of the icon   | `String`  | `null`  |
+| `app:uncheckedContentDescription` | Sets the initial unchecked content description of the icon | `String`  | `null`  |
 
 ### Methods
 
-| Method                         | Description                                                 | Return    |
-|--------------------------------|-------------------------------------------------------------|-----------|
-| `toggle()`                     | Toggles between the checked and unchecked state of the icon | `void`    |
-| `isChecked()`                  | Returns whether the icon is checked                         | `boolean` |
-| `setChecked(checked: Boolean)` | Sets the checked state of the icon                          | `void`    |
+| Method                                                                                           | Description                                                 | Return    |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------|
+| `toggle()`                                                                                       | Toggles between the checked and unchecked state of the icon | -         |
+| `.isChecked` <br /> `isChecked()`                                                                | Returns the checked state of the icon                       | `Boolean` |
+| `.isChecked = Boolean` <br /> `setChecked(isChecked: Boolean)`                                   | Sets the checked state of the icon                          | -         |
+| `.checkedContentDescription` <br /> `getCheckedContentDescription()`                             | Returns the checked content description of the icon         | `String?` |
+| `.checkedContentDescription = String?` <br /> `setCheckedContentDescription(value: String?)`     | Sets the checked content description of the icon            | -         |
+| `.uncheckedContentDescription` <br /> `getUncheckedContentDescription()`                         | Returns the unchecked content description of the icon       | `String?` |
+| `.uncheckedContentDescription = String?` <br /> `setUncheckedContentDescription(value: String?)` | Sets the unchecked content description of the icon          | -         |
 
 ### Events
 

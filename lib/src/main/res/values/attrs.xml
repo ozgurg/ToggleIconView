@@ -2,5 +2,7 @@
 <resources>
     <declare-styleable name="ToggleIconView">
         <attr name="checked" format="boolean" />
+        <attr name="checkedContentDescription" format="string" />
+        <attr name="uncheckedContentDescription" format="string" />
     </declare-styleable>
 </resources>

@@ -14,7 +14,11 @@ abstract class ToggleIconView @JvmOverloads constructor(
     private lateinit var mCheckedDrawable: AnimatedVectorDrawableCompat
     private lateinit var mUncheckedDrawable: AnimatedVectorDrawableCompat
 
+    private var mCheckedContentDescription: String? = null
+    private var mUncheckedContentDescription: String? = null
+
     private var mIsChecked: Boolean = false
+
     private var mOnCheckedChangeListener: ((view: ToggleIconView, isChecked: Boolean) -> Unit)? = null
 
     init {
@@ -58,6 +62,14 @@ abstract class ToggleIconView @JvmOverloads constructor(
         mIsChecked = isChecked
     }
 
+    private fun setContentDescriptionByCheckState(isChecked: Boolean) {
+        contentDescription = if (isChecked) {
+            mCheckedContentDescription
+        } else {
+            mUncheckedContentDescription
+        }
+    }
+
     private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
 
@@ -65,7 +77,15 @@ abstract class ToggleIconView @JvmOverloads constructor(
             // app:checked
             val checked = typedArray.getBoolean(R.styleable.ToggleIconView_checked, mIsChecked)
 
+            // app:checkedContentDescription
+            val checkedContentDescription = typedArray.getString(R.styleable.ToggleIconView_checkedContentDescription)
+            mCheckedContentDescription = checkedContentDescription
 
+            // app:uncheckedContentDescription
+            val uncheckedContentDescription = typedArray.getString(R.styleable.ToggleIconView_uncheckedContentDescription)
+            mUncheckedContentDescription = uncheckedContentDescription
+
+            setContentDescriptionByCheckState(checked)
             handleCheckState(checked)
         } finally {
             typedArray.recycle()
@@ -84,6 +104,18 @@ abstract class ToggleIconView @JvmOverloads constructor(
         isChecked = !isChecked
     }
 
+    var checkedContentDescription: String?
+        get() = mCheckedContentDescription
+        set(value) {
+            mCheckedContentDescription = value
+        }
+
+    var uncheckedContentDescription: String?
+        get() = mUncheckedContentDescription
+        set(value) {
+            mUncheckedContentDescription = value
+        }
+
     var isChecked: Boolean
         get() = mIsChecked
         set(isChecked) {
@@ -93,6 +125,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
                 return
             }
 
+            setContentDescriptionByCheckState(isChecked)
             handleCheckState(isChecked)
             invokeOnCheckedChangeListener(isChecked)
         }
