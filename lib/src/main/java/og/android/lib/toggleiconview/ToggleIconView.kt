@@ -1,8 +1,10 @@
 package og.android.lib.toggleiconview
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import androidx.annotation.DrawableRes
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 
@@ -30,10 +32,6 @@ abstract class ToggleIconView @JvmOverloads constructor(
         handleAttributes(attrs, defStyleAttr)
     }
 
-    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
-        mOnCheckedChangeListener = listener
-    }
-
     private fun createAndSetCheckedDrawable(@DrawableRes checkedDrawableResId: Int) {
         mCheckedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableResId)!!
     }
@@ -52,17 +50,17 @@ abstract class ToggleIconView @JvmOverloads constructor(
         mUncheckedDrawable.start()
     }
 
+    private fun setCheckStateAndAnimateDrawable(isChecked: Boolean) {
+        setAndAnimateDrawableByCheckState(isChecked)
+        mIsChecked = isChecked
+    }
+
     private fun setAndAnimateDrawableByCheckState(isChecked: Boolean) {
         if (isChecked) {
             setAndAnimateCheckedDrawable()
         } else {
             setAndAnimateUncheckedDrawable()
         }
-    }
-
-    private fun handleCheckState(isChecked: Boolean) {
-        setAndAnimateDrawableByCheckState(isChecked)
-        mIsChecked = isChecked
     }
 
     private fun setContentDescriptionByCheckState(isChecked: Boolean) {
@@ -73,6 +71,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setTooltipTextByCheckState(isChecked: Boolean) {
         tooltipText = if (isChecked) {
             mCheckedTooltipText
@@ -82,7 +81,12 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
-        val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
+        val typedArray = context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.ToggleIconView,
+            defStyleAttr,
+            0
+        )
 
         try {
             // app:checked
@@ -104,20 +108,24 @@ abstract class ToggleIconView @JvmOverloads constructor(
             val uncheckedTooltipText = typedArray.getString(R.styleable.ToggleIconView_uncheckedTooltipText)
             mUncheckedTooltipText = uncheckedTooltipText
 
-            setContentDescriptionByCheckState(checked)
-            setTooltipTextByCheckState(checked)
-            handleCheckState(checked)
+            handleCheckStateChange(checked)
         } finally {
             typedArray.recycle()
         }
+    }
+
+    private fun handleCheckStateChange(isChecked: Boolean) {
+        setCheckStateAndAnimateDrawable(isChecked)
+        setContentDescriptionByCheckState(isChecked)
+        setTooltipTextByCheckState(isChecked)
     }
 
     private fun invokeOnCheckedChangeListener(isChecked: Boolean) {
         mOnCheckedChangeListener?.invoke(this, isChecked)
     }
 
-    private fun isStateSame(previous: Boolean, current: Boolean): Boolean {
-        return previous == current
+    private fun isStateSame(previousState: Boolean, currentState: Boolean): Boolean {
+        return previousState == currentState
     }
 
     fun toggle() {
@@ -157,9 +165,12 @@ abstract class ToggleIconView @JvmOverloads constructor(
                 return
             }
 
-            setContentDescriptionByCheckState(isChecked)
-            setTooltipTextByCheckState(isChecked)
-            handleCheckState(isChecked)
+            handleCheckStateChange(isChecked)
+
             invokeOnCheckedChangeListener(isChecked)
         }
+
+    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
+        mOnCheckedChangeListener = listener
+    }
 }
