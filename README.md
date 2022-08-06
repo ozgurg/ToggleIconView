@@ -55,7 +55,7 @@ dependencies {
 ## API
 
 ToggleIconView, uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can do
-anything you can with `AppCompatImageView` like tinting and other staff.
+anything you can with `AppCompatImageView` like tinting and other stuff. That's why I called it "collection library".
 
 ### Attributes
 
@@ -85,13 +85,13 @@ anything you can with `AppCompatImageView` like tinting and other staff.
 
 ### Events
 
-| Event                                                                  | Description                                         |
-|------------------------------------------------------------------------|-----------------------------------------------------|
-| `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
+| Event                                                        | Description                                         |
+|--------------------------------------------------------------|-----------------------------------------------------|
+| `onCheckedChanged(view: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
 
 ## Built-in icons
 
-_All icons have the same duration and interpolator, but I manually capture their previews; so timings may look different._
+_All icons have the same duration (`@android:integer/config_shortAnimTime`) and interpolator (`@android:interpolator/fast_out_slow_in`), but I manually capture their previews; so timings may look different._
 
 | Preview                                                                                                         | Package                                                                                |
 |-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
