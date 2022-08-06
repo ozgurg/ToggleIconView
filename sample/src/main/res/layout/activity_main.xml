@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#09c"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Touch an icon and search for 'TOGGLEICONVIEW_SAMPLE' tag in Logcat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#fff" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,7 +49,12 @@
                         style="@style/DemoSecondaryTitle"
                         android:text="Sharp" />
 
-                    <og.android.lib.toggleiconview.sharp.PlayPause style="@style/DemoIcon" />
+                    <og.android.lib.toggleiconview.sharp.PlayPause
+                        style="@style/DemoIcon"
+                        app:checkedContentDescription="Playing..."
+                        app:checkedTooltipText="Playing..."
+                        app:uncheckedContentDescription="Paused"
+                        app:uncheckedTooltipText="Paused" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -52,7 +68,12 @@
                         style="@style/DemoSecondaryTitle"
                         android:text="Rounded" />
 
-                    <og.android.lib.toggleiconview.rounded.PlayPause style="@style/DemoIcon" />
+                    <og.android.lib.toggleiconview.rounded.PlayPause
+                        style="@style/DemoIcon"
+                        app:checkedContentDescription="Playing..."
+                        app:checkedTooltipText="Playing..."
+                        app:uncheckedContentDescription="Paused"
+                        app:uncheckedTooltipText="Paused" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

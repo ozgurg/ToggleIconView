@@ -20,7 +20,7 @@ allprojects {
 }
 ```
 
-If the above doesn't work, try the following:
+If the above doesn't work for you, try the following:
 
 ```gradle
 // settings.gradle
@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:2.3.0"
+    implementation "com.github.ozgurg:ToggleIconView:3.0.0"
 }
 ```
 
@@ -55,31 +55,43 @@ dependencies {
 ## API
 
 ToggleIconView, uses `AnimatedVectorDrawableCompat` under the hood and extends `AppCompatImageView`. So you can do
-anything you can with `AppCompatImageView`.
+anything you can with `AppCompatImageView` like tinting and other stuff. That's why I called it "collection library".
 
 ### Attributes
 
-| Attribute     | Description                        | Type      | Default |
-|---------------|------------------------------------|-----------|---------|
-| `app:checked` | Sets the initial state of the icon | `boolean` | `false` |
+| Attribute                         | Description                                                | Type      | Default |
+|-----------------------------------|------------------------------------------------------------|-----------|---------|
+| `app:checked`                     | Sets the initial state of the icon                         | `Boolean` | `false` |
+| `app:checkedContentDescription`   | Sets the initial checked content description of the icon   | `String`  | `null`  |
+| `app:uncheckedContentDescription` | Sets the initial unchecked content description of the icon | `String`  | `null`  |
+| `app:checkedTooltipText`          | Sets the initial checked tooltip text of the icon          | `String`  | `null`  |
+| `app:uncheckedTooltipText`        | Sets the initial unchecked tooltip text of the icon        | `String`  | `null`  |
 
 ### Methods
 
-| Method                         | Description                                                 | Return    |
-|--------------------------------|-------------------------------------------------------------|-----------|
-| `toggle()`                     | Toggles between the checked and unchecked state of the icon | `void`    |
-| `isChecked()`                  | Returns whether the icon is checked                         | `boolean` |
-| `setChecked(checked: Boolean)` | Sets the checked state of the icon                          | `void`    |
+| Method                                                                                           | Description                                                 | Return    |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------|
+| `toggle()`                                                                                       | Toggles between the checked and unchecked state of the icon | -         |
+| `.isChecked` <br /> `isChecked()`                                                                | Returns the checked state of the icon                       | `Boolean` |
+| `.isChecked = Boolean` <br /> `setChecked(isChecked: Boolean)`                                   | Sets the checked state of the icon                          | -         |
+| `.checkedContentDescription` <br /> `getCheckedContentDescription()`                             | Returns the checked content description of the icon         | `String?` |
+| `.checkedContentDescription = String?` <br /> `setCheckedContentDescription(value: String?)`     | Sets the checked content description of the icon            | -         |
+| `.uncheckedContentDescription` <br /> `getUncheckedContentDescription()`                         | Returns the unchecked content description of the icon       | `String?` |
+| `.uncheckedContentDescription = String?` <br /> `setUncheckedContentDescription(value: String?)` | Sets the unchecked content description of the icon          | -         |
+| `.checkedTooltipText` <br /> `getCheckedTooltipText()`                                           | Returns the checked tooltip text of the icon                | `String?` |
+| `.checkedTooltipText = String?` <br /> `setCheckedTooltipText(value: String?)`                   | Sets the checked tooltip text of the icon                   | -         |
+| `.uncheckedTooltipText` <br /> `getUncheckedTooltipText()`                                       | Returns the unchecked tooltip text of the icon              | `String?` |
+| `.uncheckedTooltipText = String?` <br /> `setUncheckedTooltipText(value: String?)`               | Sets the unchecked tooltip text of the icon                 | -         |
 
 ### Events
 
-| Event                                                                  | Description                                         |
-|------------------------------------------------------------------------|-----------------------------------------------------|
-| `onCheckedChanged(toggleIconView: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
+| Event                                                        | Description                                         |
+|--------------------------------------------------------------|-----------------------------------------------------|
+| `onCheckedChanged(view: ToggleIconView, isChecked: Boolean)` | Triggers when the checked state of the icon changed |
 
 ## Built-in icons
 
-_All icons have the same duration and interpolator, but I manually capture their previews; so timings may look different._
+_All icons have the same duration (`@android:integer/config_shortAnimTime`) and interpolator (`@android:interpolator/fast_out_slow_in`), but I manually capture their previews; so timings may look different._
 
 | Preview                                                                                                         | Package                                                                                |
 |-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -90,19 +102,17 @@ _All icons have the same duration and interpolator, but I manually capture their
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)        | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`               |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif) | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff` |
 
-## How I create my own icon?
+## How do you create your custom icon?
 
 ### 1) Create an icon
 
-First, you need to create an `AnimatedVectorDrawable` icon.
-
-I highly recommend using [Shape Shifter](https://shapeshifter.design/).
+First, you need to create an `AnimatedVectorDrawable` icon. I highly recommend using [Shape Shifter](https://shapeshifter.design/).
 
 After creating and exporting your icon, add the icon to your project's `drawable` folder.
 
 ### 2) Implement the icon
 
-Just extend `ToggleIconView` class and set checked and unchecked icon you want to use.
+Extend `ToggleIconView` class and set checked and unchecked icon you created.
 
 ``` kotlin
 package [PACKAGE_NAME]

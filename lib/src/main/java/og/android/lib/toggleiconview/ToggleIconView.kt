@@ -11,82 +11,162 @@ abstract class ToggleIconView @JvmOverloads constructor(
     @DrawableRes checkedDrawableResId: Int,
     @DrawableRes uncheckedDrawableResId: Int,
 ) : AppCompatImageView(context, attrs, defStyleAttr) {
-    private lateinit var checkedDrawable: AnimatedVectorDrawableCompat
-    private lateinit var uncheckedDrawable: AnimatedVectorDrawableCompat
+    private lateinit var mCheckedDrawable: AnimatedVectorDrawableCompat
+    private lateinit var mUncheckedDrawable: AnimatedVectorDrawableCompat
 
-    private var isChecked: Boolean = false
-    private var onCheckedChangeListener: ((toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit)? = null
+    private var mCheckedContentDescription: String? = null
+    private var mUncheckedContentDescription: String? = null
+
+    private var mCheckedTooltipText: String? = null
+    private var mUncheckedTooltipText: String? = null
+
+    private var mIsChecked: Boolean = false
+
+    private var mOnCheckedChangeListener: ((view: ToggleIconView, isChecked: Boolean) -> Unit)? = null
 
     init {
-        setCheckedDrawable(checkedDrawableResId)
-        setUncheckedDrawable(uncheckedDrawableResId)
+        createAndSetCheckedDrawable(checkedDrawableResId)
+        createAndSetUncheckedDrawable(uncheckedDrawableResId)
         handleAttributes(attrs, defStyleAttr)
     }
 
-    private fun setCheckedDrawable(@DrawableRes drawableResId: Int) {
-        checkedDrawable = AnimatedVectorDrawableCompat.create(context, drawableResId)!!
+    private fun createAndSetCheckedDrawable(@DrawableRes checkedDrawableResId: Int) {
+        mCheckedDrawable = AnimatedVectorDrawableCompat.create(context, checkedDrawableResId)!!
     }
 
-    private fun setUncheckedDrawable(@DrawableRes drawableResId: Int) {
-        uncheckedDrawable = AnimatedVectorDrawableCompat.create(context, drawableResId)!!
+    private fun createAndSetUncheckedDrawable(@DrawableRes uncheckedDrawableResId: Int) {
+        mUncheckedDrawable = AnimatedVectorDrawableCompat.create(context, uncheckedDrawableResId)!!
     }
 
     private fun setAndAnimateCheckedDrawable() {
-        setImageDrawable(checkedDrawable)
-        checkedDrawable.start()
+        setImageDrawable(mCheckedDrawable)
+        mCheckedDrawable.start()
     }
 
     private fun setAndAnimateUncheckedDrawable() {
-        setImageDrawable(uncheckedDrawable)
-        uncheckedDrawable.start()
+        setImageDrawable(mUncheckedDrawable)
+        mUncheckedDrawable.start()
     }
 
-    private fun setAndAnimateDrawableByCheckState(checked: Boolean) {
-        if (checked) {
+    private fun setCheckStateAndAnimateDrawable(isChecked: Boolean) {
+        setAndAnimateDrawableByCheckState(isChecked)
+        mIsChecked = isChecked
+    }
+
+    private fun setAndAnimateDrawableByCheckState(isChecked: Boolean) {
+        if (isChecked) {
             setAndAnimateCheckedDrawable()
         } else {
             setAndAnimateUncheckedDrawable()
         }
     }
 
-    private fun handleCheckState(checked: Boolean) {
-        setAndAnimateDrawableByCheckState(checked)
-        isChecked = checked
+    private fun setContentDescriptionByCheckState(isChecked: Boolean) {
+        contentDescription = if (isChecked) {
+            mCheckedContentDescription
+        } else {
+            mUncheckedContentDescription
+        }
+    }
+
+    private fun setTooltipTextByCheckState(isChecked: Boolean) {
+        tooltipText = if (isChecked) {
+            mCheckedTooltipText
+        } else {
+            mUncheckedTooltipText
+        }
     }
 
     private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
-        val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
+        val typedArray = context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.ToggleIconView,
+            defStyleAttr,
+            0
+        )
 
         try {
             // app:checked
-            val checked = typedArray.getBoolean(R.styleable.ToggleIconView_checked, isChecked)
+            val checked = typedArray.getBoolean(R.styleable.ToggleIconView_checked, mIsChecked)
 
-            handleCheckState(checked)
+            // app:checkedContentDescription
+            val checkedContentDescription = typedArray.getString(R.styleable.ToggleIconView_checkedContentDescription)
+            mCheckedContentDescription = checkedContentDescription
+
+            // app:uncheckedContentDescription
+            val uncheckedContentDescription = typedArray.getString(R.styleable.ToggleIconView_uncheckedContentDescription)
+            mUncheckedContentDescription = uncheckedContentDescription
+
+            // app:checkedTooltipText
+            val checkedTooltipText = typedArray.getString(R.styleable.ToggleIconView_checkedTooltipText)
+            mCheckedTooltipText = checkedTooltipText
+
+            // app:uncheckedTooltipText
+            val uncheckedTooltipText = typedArray.getString(R.styleable.ToggleIconView_uncheckedTooltipText)
+            mUncheckedTooltipText = uncheckedTooltipText
+
+            handleCheckStateChange(checked)
         } finally {
             typedArray.recycle()
         }
     }
 
+    private fun handleCheckStateChange(isChecked: Boolean) {
+        setCheckStateAndAnimateDrawable(isChecked)
+        setContentDescriptionByCheckState(isChecked)
+        setTooltipTextByCheckState(isChecked)
+    }
+
+    private fun invokeOnCheckedChangeListener(isChecked: Boolean) {
+        mOnCheckedChangeListener?.invoke(this, isChecked)
+    }
+
+    private fun isStateSame(previousState: Boolean, currentState: Boolean): Boolean {
+        return previousState == currentState
+    }
+
     fun toggle() {
-        setChecked(!isChecked)
+        isChecked = !isChecked
     }
 
-    fun isChecked(): Boolean {
-        return isChecked
-    }
-
-    fun setChecked(checked: Boolean) {
-        // We won't update the status if the status is the same as the current status
-        // This is to prevent the animation from restarting when the state is set again
-        if (checked == isChecked) {
-            return
+    var checkedContentDescription: String?
+        get() = mCheckedContentDescription
+        set(value) {
+            mCheckedContentDescription = value
         }
 
-        handleCheckState(checked)
-        onCheckedChangeListener?.invoke(this, checked)
-    }
+    var uncheckedContentDescription: String?
+        get() = mUncheckedContentDescription
+        set(value) {
+            mUncheckedContentDescription = value
+        }
 
-    open fun setOnCheckedChangeListener(listener: (toggleIconView: ToggleIconView, isChecked: Boolean) -> Unit) {
-        onCheckedChangeListener = listener
+    var checkedTooltipText: String?
+        get() = mCheckedTooltipText
+        set(value) {
+            mCheckedTooltipText = value
+        }
+
+    var uncheckedTooltipText: String?
+        get() = mUncheckedTooltipText
+        set(value) {
+            mUncheckedTooltipText = value
+        }
+
+    var isChecked: Boolean
+        get() = mIsChecked
+        set(isChecked) {
+            // We do not update the state if the state is the same as the current state
+            // to prevent the animation from restarting when the state is set again
+            if (isStateSame(isChecked, mIsChecked)) {
+                return
+            }
+
+            handleCheckStateChange(isChecked)
+            invokeOnCheckedChangeListener(isChecked)
+        }
+
+    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
+        mOnCheckedChangeListener = listener
     }
 }
