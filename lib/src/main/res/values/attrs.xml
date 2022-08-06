@@ -4,5 +4,7 @@
         <attr name="checked" format="boolean" />
         <attr name="checkedContentDescription" format="string" />
         <attr name="uncheckedContentDescription" format="string" />
+        <attr name="checkedTooltipText" format="string" />
+        <attr name="uncheckedTooltipText" format="string" />
     </declare-styleable>
 </resources>

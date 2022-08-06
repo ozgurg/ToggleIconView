@@ -17,6 +17,9 @@ abstract class ToggleIconView @JvmOverloads constructor(
     private var mCheckedContentDescription: String? = null
     private var mUncheckedContentDescription: String? = null
 
+    private var mCheckedTooltipText: String? = null
+    private var mUncheckedTooltipText: String? = null
+
     private var mIsChecked: Boolean = false
 
     private var mOnCheckedChangeListener: ((view: ToggleIconView, isChecked: Boolean) -> Unit)? = null
@@ -70,6 +73,14 @@ abstract class ToggleIconView @JvmOverloads constructor(
         }
     }
 
+    private fun setTooltipTextByCheckState(isChecked: Boolean) {
+        tooltipText = if (isChecked) {
+            mCheckedTooltipText
+        } else {
+            mUncheckedTooltipText
+        }
+    }
+
     private fun handleAttributes(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.ToggleIconView, defStyleAttr, 0)
 
@@ -85,7 +96,16 @@ abstract class ToggleIconView @JvmOverloads constructor(
             val uncheckedContentDescription = typedArray.getString(R.styleable.ToggleIconView_uncheckedContentDescription)
             mUncheckedContentDescription = uncheckedContentDescription
 
+            // app:checkedTooltipText
+            val checkedTooltipText = typedArray.getString(R.styleable.ToggleIconView_checkedTooltipText)
+            mCheckedTooltipText = checkedTooltipText
+
+            // app:uncheckedTooltipText
+            val uncheckedTooltipText = typedArray.getString(R.styleable.ToggleIconView_uncheckedTooltipText)
+            mUncheckedTooltipText = uncheckedTooltipText
+
             setContentDescriptionByCheckState(checked)
+            setTooltipTextByCheckState(checked)
             handleCheckState(checked)
         } finally {
             typedArray.recycle()
@@ -116,6 +136,18 @@ abstract class ToggleIconView @JvmOverloads constructor(
             mUncheckedContentDescription = value
         }
 
+    var checkedTooltipText: String?
+        get() = mCheckedTooltipText
+        set(value) {
+            mCheckedTooltipText = value
+        }
+
+    var uncheckedTooltipText: String?
+        get() = mUncheckedTooltipText
+        set(value) {
+            mUncheckedTooltipText = value
+        }
+
     var isChecked: Boolean
         get() = mIsChecked
         set(isChecked) {
@@ -126,6 +158,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
             }
 
             setContentDescriptionByCheckState(isChecked)
+            setTooltipTextByCheckState(isChecked)
             handleCheckState(isChecked)
             invokeOnCheckedChangeListener(isChecked)
         }

@@ -52,7 +52,9 @@
                     <og.android.lib.toggleiconview.sharp.PlayPause
                         style="@style/DemoIcon"
                         app:checkedContentDescription="Playing..."
-                        app:uncheckedContentDescription="Paused" />
+                        app:checkedTooltipText="Playing..."
+                        app:uncheckedContentDescription="Paused"
+                        app:uncheckedTooltipText="Paused" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -69,7 +71,9 @@
                     <og.android.lib.toggleiconview.rounded.PlayPause
                         style="@style/DemoIcon"
                         app:checkedContentDescription="Playing..."
-                        app:uncheckedContentDescription="Paused" />
+                        app:checkedTooltipText="Playing..."
+                        app:uncheckedContentDescription="Paused"
+                        app:uncheckedTooltipText="Paused" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

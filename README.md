@@ -64,6 +64,8 @@ anything you can with `AppCompatImageView`.
 | `app:checked`                     | Sets the initial state of the icon                         | `Boolean` | `false` |
 | `app:checkedContentDescription`   | Sets the initial checked content description of the icon   | `String`  | `null`  |
 | `app:uncheckedContentDescription` | Sets the initial unchecked content description of the icon | `String`  | `null`  |
+| `app:checkedTooltipText`          | Sets the initial checked tooltip text of the icon          | `String`  | `null`  |
+| `app:uncheckedTooltipText`        | Sets the initial unchecked tooltip text of the icon        | `String`  | `null`  |
 
 ### Methods
 
@@ -76,6 +78,10 @@ anything you can with `AppCompatImageView`.
 | `.checkedContentDescription = String?` <br /> `setCheckedContentDescription(value: String?)`     | Sets the checked content description of the icon            | -         |
 | `.uncheckedContentDescription` <br /> `getUncheckedContentDescription()`                         | Returns the unchecked content description of the icon       | `String?` |
 | `.uncheckedContentDescription = String?` <br /> `setUncheckedContentDescription(value: String?)` | Sets the unchecked content description of the icon          | -         |
+| `.checkedTooltipText` <br /> `getCheckedTooltipText()`                                           | Returns the checked tooltip text of the icon                | `String?` |
+| `.checkedTooltipText = String?` <br /> `setCheckedTooltipText(value: String?)`                   | Sets the checked tooltip text of the icon                   | -         |
+| `.uncheckedTooltipText` <br /> `getUncheckedTooltipText()`                                       | Returns the unchecked tooltip text of the icon              | `String?` |
+| `.uncheckedTooltipText = String?` <br /> `setUncheckedTooltipText(value: String?)`               | Sets the unchecked tooltip text of the icon                 | -         |
 
 ### Events
 
