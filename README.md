@@ -1,4 +1,4 @@
-![JitPack](https://img.shields.io/jitpack/v/github/ozgurg/ToggleIconView)
+[![JitPack](https://img.shields.io/jitpack/v/github/ozgurg/ToggleIconView)](https://jitpack.io/#ozgurg/ToggleIconView)
 
 # ToggleIconView
 
