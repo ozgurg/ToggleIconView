@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:3.0.1"
+    implementation "com.github.ozgurg:ToggleIconView:3.0.2"
 }
 ```
 
