@@ -1,4 +1,4 @@
-![JitPack](https://img.shields.io/jitpack/v/github/ozgurg/ToggleIconView)
+[![JitPack](https://img.shields.io/jitpack/v/github/ozgurg/ToggleIconView)](https://jitpack.io/#ozgurg/ToggleIconView)
 
 # ToggleIconView
 
@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:3.0.0"
+    implementation "com.github.ozgurg:ToggleIconView:3.0.1"
 }
 ```
 
@@ -116,21 +116,21 @@ Extend `ToggleIconView` class and set checked and unchecked icon you created.
 
 ``` kotlin
 package [PACKAGE_NAME]
-  
-import android.content.Context  
-import android.util.AttributeSet  
-import og.android.lib.toggleiconview.R  
-import og.android.lib.toggleiconview.ToggleIconView  
-  
-class [NAME_YOUR_ICON] @JvmOverloads constructor(  
-    context: Context,  
-    attrs: AttributeSet? = null,  
-    defStyleAttr: Int = 0  
-) :  
-    ToggleIconView(  
-        context, attrs, defStyleAttr,  
-        R.drawable.[CHECKED_ICON],  
-        R.drawable.[UNCHECKED_ICON]  
+
+import android.content.Context
+import android.util.AttributeSet
+import og.android.lib.toggleiconview.R
+import og.android.lib.toggleiconview.ToggleIconView
+
+class [NAME_YOUR_ICON] @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) :
+    ToggleIconView(
+        context, attrs, defStyleAttr,
+        R.drawable.[CHECKED_ICON],
+        R.drawable.[UNCHECKED_ICON]
     )
 ```
 
