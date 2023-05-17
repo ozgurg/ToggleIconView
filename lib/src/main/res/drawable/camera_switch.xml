@@ -11,24 +11,17 @@
                 android:pivotX="12"
                 android:pivotY="12">
                 <path
-                    android:name="path"
                     android:fillColor="@android:color/black"
-                    android:pathData="M 8 5 L 8 19 L 19 12 Z" />
+                    android:pathData="M 16 7 L 15 7 L 14 6 L 10 6 L 9 7 L 8 7 C 6.9 7 6 7.9 6 9 L 6 15 C 6 16.1 6.9 17 8 17 L 16 17 C 17.1 17 18 16.1 18 15 L 18 9 C 18 7.9 17.1 7 16 7 Z M 12 14 C 10.9 14 10 13.1 10 12 C 10 10.9 10.9 10 12 10 C 13.1 10 14 10.9 14 12 C 14 13.1 13.1 14 12 14 Z" />
+                <path
+                    android:fillColor="@android:color/black"
+                    android:pathData="M 8.57 0.51 L 13.05 4.99 L 13.05 2.04 C 17.77 2.51 21.53 6.27 22 10.99 C 22 10.99 24 10.99 24 10.99 C 23.34 3.02 15.49 -1.59 8.57 0.51 Z" />
+                <path
+                    android:fillColor="@android:color/black"
+                    android:pathData="M 10.95 21.96 C 6.23 21.49 2.47 17.73 2 13.01 C 2 13.01 0 13.01 0 13.01 C 0.66 20.98 8.51 25.59 15.43 23.49 L 10.95 19.01 L 10.95 21.96 Z" />
             </group>
         </vector>
     </aapt:attr>
-
-    <target android:name="path">
-        <aapt:attr name="android:animation">
-            <objectAnimator
-                android:duration="@android:integer/config_shortAnimTime"
-                android:interpolator="@android:interpolator/fast_out_slow_in"
-                android:propertyName="pathData"
-                android:valueFrom="M 8 5 L 8 12 L 19 12 L 19 12 L 8 5 M 8 12 L 8 19 L 19 12 L 19 12 L 8 12"
-                android:valueTo="M 5 6 L 5 10 L 19 10 L 19 6 L 5 6 M 5 14 L 5 18 L 19 18 L 19 14 L 5 14"
-                android:valueType="pathType" />
-        </aapt:attr>
-    </target>
 
     <target android:name="group">
         <aapt:attr name="android:animation">
@@ -37,7 +30,7 @@
                 android:interpolator="@android:interpolator/fast_out_slow_in"
                 android:propertyName="rotation"
                 android:valueFrom="0"
-                android:valueTo="90"
+                android:valueTo="360"
                 android:valueType="floatType" />
         </aapt:attr>
     </target>

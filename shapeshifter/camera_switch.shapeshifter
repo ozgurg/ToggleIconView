@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "layers": {
+    "vectorLayer": {
+      "id": "123",
+      "name": "cameraswitch",
+      "type": "vector",
+      "width": 24,
+      "height": 24,
+      "children": [
+        {
+          "id": "124",
+          "name": "group",
+          "type": "group",
+          "pivotX": 12,
+          "pivotY": 12,
+          "children": [
+            {
+              "id": "851",
+              "name": "path1",
+              "type": "path",
+              "pathData": "M 16 7 L 15 7 L 14 6 L 10 6 L 9 7 L 8 7 C 6.9 7 6 7.9 6 9 L 6 15 C 6 16.1 6.9 17 8 17 L 16 17 C 17.1 17 18 16.1 18 15 L 18 9 C 18 7.9 17.1 7 16 7 Z M 12 14 C 10.9 14 10 13.1 10 12 C 10 10.9 10.9 10 12 10 C 13.1 10 14 10.9 14 12 C 14 13.1 13.1 14 12 14 Z",
+              "fillColor": "#000000"
+            },
+            {
+              "id": "876",
+              "name": "path2",
+              "type": "path",
+              "pathData": "M 8.57 0.51 L 13.05 4.99 L 13.05 2.04 C 17.77 2.51 21.53 6.27 22 10.99 C 22 10.99 24 10.99 24 10.99 C 23.34 3.02 15.49 -1.59 8.57 0.51 Z",
+              "fillColor": "#000000"
+            },
+            {
+              "id": "886",
+              "name": "path3",
+              "type": "path",
+              "pathData": "M 10.95 21.96 C 6.23 21.49 2.47 17.73 2 13.01 C 2 13.01 0 13.01 0 13.01 C 0.66 20.98 8.51 25.59 15.43 23.49 L 10.95 19.01 L 10.95 21.96 Z",
+              "fillColor": "#000000"
+            }
+          ]
+        }
+      ]
+    },
+    "hiddenLayerIds": []
+  },
+  "timeline": {
+    "animation": {
+      "id": "126",
+      "name": "anim",
+      "duration": 300,
+      "blocks": [
+        {
+          "id": "128",
+          "layerId": "124",
+          "propertyName": "rotation",
+          "startTime": 0,
+          "endTime": 300,
+          "interpolator": "FAST_OUT_SLOW_IN",
+          "type": "number",
+          "fromValue": 0,
+          "toValue": 360
+        }
+      ]
+    }
+  }
+}
