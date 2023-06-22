@@ -12,6 +12,6 @@ class CameraSwitch @JvmOverloads constructor(
 ) :
     ToggleIconView(
         context, attrs, defStyleAttr,
-        R.drawable.camera_switch,
-        R.drawable.camera_switch
+        R.drawable.sharp_camera_switch,
+        R.drawable.sharp_camera_switch
     )

@@ -3,7 +3,7 @@
   "layers": {
     "vectorLayer": {
       "id": "123",
-      "name": "cameraswitch",
+      "name": "sharp_camera_switch",
       "type": "vector",
       "width": 24,
       "height": 24,
