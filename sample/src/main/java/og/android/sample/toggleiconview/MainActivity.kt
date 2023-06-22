@@ -1,5 +1,6 @@
 package og.android.sample.toggleiconview
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
@@ -54,10 +55,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             toggleIconView.setOnCheckedChangeListener { view: ToggleIconView, _: Boolean ->
-                val value = "[${view::class.qualifiedName.toString()}:onCheckedChanged]\n" +
+                val value = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    "[${view::class.qualifiedName.toString()}:onCheckedChanged]\n" +
                         "isChecked: ${toggleIconView.isChecked}\n" +
                         "tooltipText: ${toggleIconView.tooltipText}\n" +
                         "contentDescription: ${toggleIconView.contentDescription}"
+                } else {
+                    "[${view::class.qualifiedName.toString()}:onCheckedChanged]\n" +
+                        "isChecked: ${toggleIconView.isChecked}\n" +
+                        "tooltipText: not-supported\n" +
+                        "contentDescription: ${toggleIconView.contentDescription}"
+                }
                 Log.d("TOGGLEICONVIEW_SAMPLE", value)
             }
         }

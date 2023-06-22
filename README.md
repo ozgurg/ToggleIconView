@@ -6,6 +6,9 @@ ToggleIconView is a collection library of animated two-stage toggle icons for An
 
 ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/sample.gif)
 
+## Requirements
+- Android 5.0 (API 21) or higher
+
 ## Installation
 
 ### JitPack repository
@@ -39,7 +42,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:3.2.0"
+    implementation "com.github.ozgurg:ToggleIconView:3.3.0"
 }
 ```
 
