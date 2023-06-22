@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```gradle
 // App level build.gradle
 dependencies {
-    implementation "com.github.ozgurg:ToggleIconView:3.1.1"
+    implementation "com.github.ozgurg:ToggleIconView:3.2.0"
 }
 ```
 
@@ -102,6 +102,7 @@ _All icons have the same duration (`@android:integer/config_shortAnimTime`) and 
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)        | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`               |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif) | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/CameraSwitch.gif)      | [Sharp] CameraSwitch<br />`og.android.lib.toggleiconview.sharp.CameraSwitch`           |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/Refresh.gif)           | [Sharp] Refresh<br />`og.android.lib.toggleiconview.sharp.Refresh`                     |
 
 ## How do you create your custom icon?
 
@@ -120,7 +121,6 @@ package [PACKAGE_NAME]
 
 import android.content.Context
 import android.util.AttributeSet
-import og.android.lib.toggleiconview.R
 import og.android.lib.toggleiconview.ToggleIconView
 
 class [NAME_YOUR_ICON] @JvmOverloads constructor(
