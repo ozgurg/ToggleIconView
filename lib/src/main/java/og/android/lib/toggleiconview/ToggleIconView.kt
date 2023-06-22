@@ -23,7 +23,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
 
     private var mIsChecked: Boolean = false
 
-    private var mOnCheckedChangeListener: ((view: ToggleIconView, isChecked: Boolean) -> Unit)? = null
+    private var mOnCheckedChangeListener: OnCheckedChangeListener? = null
 
     init {
         createAndSetCheckedDrawable(checkedDrawableResId)
@@ -123,7 +123,7 @@ abstract class ToggleIconView @JvmOverloads constructor(
     }
 
     private fun invokeOnCheckedChangeListener(isChecked: Boolean) {
-        mOnCheckedChangeListener?.invoke(this, isChecked)
+        mOnCheckedChangeListener?.onCheckedChanged(this, isChecked)
     }
 
     private fun isStateSame(previousState: Boolean, currentState: Boolean): Boolean {
@@ -171,7 +171,11 @@ abstract class ToggleIconView @JvmOverloads constructor(
             invokeOnCheckedChangeListener(isChecked)
         }
 
-    open fun setOnCheckedChangeListener(listener: (view: ToggleIconView, isChecked: Boolean) -> Unit) {
+    open fun setOnCheckedChangeListener(listener: OnCheckedChangeListener) {
         mOnCheckedChangeListener = listener
+    }
+
+    fun interface OnCheckedChangeListener {
+        fun onCheckedChanged(view: ToggleIconView, isChecked: Boolean)
     }
 }
