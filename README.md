@@ -102,6 +102,7 @@ _All icons have the same duration (`@android:integer/config_shortAnimTime`) and 
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/FlashOnOff.gif)        | [Sharp] FlashOnOff<br />`og.android.lib.toggleiconview.sharp.FlashOnOff`               |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/AirplaneModeOnOff.gif) | [Sharp] AirplaneModeOnOff<br />`og.android.lib.toggleiconview.sharp.AirplaneModeOnOff` |
 | ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/CameraSwitch.gif)      | [Sharp] CameraSwitch<br />`og.android.lib.toggleiconview.sharp.CameraSwitch`           |
+| ![](https://raw.githubusercontent.com/ozgurg/ToggleIconView/master/.github/preview/sharp/Refresh.gif)           | [Sharp] Refresh<br />`og.android.lib.toggleiconview.sharp.Refresh`                     |
 
 ## How do you create your custom icon?
 
