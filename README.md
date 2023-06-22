@@ -120,7 +120,6 @@ package [PACKAGE_NAME]
 
 import android.content.Context
 import android.util.AttributeSet
-import og.android.lib.toggleiconview.R
 import og.android.lib.toggleiconview.ToggleIconView
 
 class [NAME_YOUR_ICON] @JvmOverloads constructor(
